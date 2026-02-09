@@ -15,3 +15,11 @@ node_modules/
 # Lock files
 package-lock.json
 **/package-lock.json
+
+# Local / agent config and one-off tools (do not commit)
+AGENTS.md
+.agents/
+.claude/
+tools/da-index-response.json
+tools/da-index-updated.html
+tools/da-replace-expertise.js
