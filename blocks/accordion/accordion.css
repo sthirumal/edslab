@@ -1,0 +1,246 @@
+/* Import fonts - Design Mind / lab2 style */
+@import url('https://fonts.googleapis.com/css2?family=Rethink+Sans:wght@400;500;600;700&display=swap');
+
+/* Section container styling (applied when block is in section) */
+.accordion-container {
+  background-color: #f5f3ed; /* Light beige background matching Design Mind */
+  padding: 100px 60px;
+  margin: 0 !important; /* Remove default section margin */
+}
+
+.accordion-container h2 {
+  font-family: 'Rethink Sans', sans-serif;
+  font-size: 3rem; /* 48px */
+  font-weight: 600;
+  color: #00472a; /* Dark green */
+  text-align: center;
+  margin: 0 0 60px;
+  line-height: 1.2;
+}
+
+.accordion {
+  max-width: 1040px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 16px; /* Space between accordion items */
+}
+
+.accordion .accordion-item {
+  background-color: #fff; /* White background */
+  border-radius: 20px; /* Rounded corners */
+  padding: 0;
+  box-shadow: 0 1px 3px rgb(0 0 0 / 5%); /* Subtle shadow */
+  overflow: hidden; /* Prevent content overflow during animation */
+  opacity: 0;
+  transform: translateY(60px) scale(0.95);
+  transition: opacity 0.8s cubic-bezier(0.4, 0, 0.2, 1), transform 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.accordion .accordion-item.animate-in {
+  opacity: 1;
+  transform: translateY(0) scale(1);
+}
+
+.accordion .accordion-item-label {
+  cursor: pointer;
+  padding: 16px 24px;
+  font-family: 'Rethink Sans', sans-serif;
+  font-size: 1.063rem; /* 17px */
+  font-weight: 500;
+  color: #1a1a1a; /* Dark text, not green */
+  list-style: none;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  line-height: 1.5;
+  position: relative;
+}
+
+.accordion .accordion-item-label-text {
+  transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  display: block;
+}
+
+.accordion .accordion-item:hover .accordion-item-label-text {
+  transform: translateX(8px);
+}
+
+.accordion .accordion-item-label::after {
+  content: '+';
+  font-size: 1.75rem; /* 28px */
+  font-weight: 300;
+  color: #1a1a1a;
+  transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  flex-shrink: 0;
+  margin-left: 20px;
+  line-height: 1;
+  position: relative;
+}
+
+.accordion .accordion-item:hover .accordion-item-label::after {
+  transform: translateX(-8px);
+}
+
+.accordion .accordion-item[open] .accordion-item-label::after {
+  content: '−';
+}
+
+.accordion .accordion-item-label::-webkit-details-marker {
+  display: none;
+}
+
+.accordion .accordion-item-body {
+  padding: 0 24px 16px;
+  font-family: 'Rethink Sans', sans-serif;
+  font-size: 0.9375rem; /* 15px */
+  font-weight: 400;
+  color: #666; /* Gray text */
+  line-height: 1.65;
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.6s cubic-bezier(0.4, 0, 0.2, 1), padding 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.accordion .accordion-item[open] .accordion-item-body {
+  max-height: 2000px;
+  padding: 0 24px 16px;
+}
+
+.accordion .accordion-item-body p {
+  margin: 0 0 16px;
+}
+
+.accordion .accordion-item-body p:last-child {
+  margin-bottom: 0;
+}
+
+/* Responsive adjustments */
+@media (width >= 900px) {
+  .accordion-container {
+    padding: 120px 80px;
+  }
+
+  .accordion-container h2 {
+    font-size: 3.5rem; /* 56px */
+    margin-bottom: 80px;
+  }
+
+  .accordion {
+    gap: 14px;
+  }
+
+  .accordion .accordion-item-label {
+    font-size: 1.125rem; /* 18px */
+    padding: 20px 32px;
+  }
+
+  .accordion .accordion-item-body {
+    font-size: 1rem; /* 16px */
+    padding: 0 32px 20px;
+  }
+
+  .accordion .accordion-item[open] .accordion-item-body {
+    padding: 0 32px 20px;
+  }
+}
+
+@media (width >= 1200px) {
+  .accordion-container {
+    padding: 140px 100px;
+  }
+
+  .accordion-container h2 {
+    font-size: 4rem; /* 64px */
+    margin-bottom: 100px;
+  }
+
+  .accordion {
+    gap: 16px;
+  }
+
+  .accordion .accordion-item-label {
+    font-size: 1.188rem; /* 19px */
+    padding: 15px 26px;
+  }
+
+  .accordion .accordion-item-body {
+    font-size: 1.0625rem; /* 17px */
+    padding: 0 36px 22px;
+  }
+
+  .accordion .accordion-item[open] .accordion-item-body {
+    padding: 0 36px 22px;
+  }
+}
+
+@media (width < 900px) {
+  .accordion-container {
+    padding: 80px 40px;
+  }
+
+  .accordion-container h2 {
+    font-size: 2.5rem; /* 40px */
+    margin-bottom: 50px;
+  }
+
+  .accordion {
+    gap: 10px;
+  }
+
+  .accordion .accordion-item-label {
+    font-size: 1rem; /* 16px */
+    padding: 16px 20px;
+  }
+
+  .accordion .accordion-item-body {
+    font-size: 0.9375rem; /* 15px */
+    padding: 0 20px 16px;
+  }
+
+  .accordion .accordion-item[open] .accordion-item-body {
+    padding: 0 20px 16px;
+  }
+
+  .accordion .accordion-item-label::after {
+    font-size: 1.625rem;
+  }
+}
+
+@media (width < 600px) {
+  .accordion-container {
+    padding: 60px 20px;
+  }
+
+  .accordion-container h2 {
+    font-size: 2rem; /* 32px */
+    margin-bottom: 40px;
+  }
+
+  .accordion {
+    gap: 8px;
+  }
+
+  .accordion .accordion-item {
+    border-radius: 16px;
+  }
+
+  .accordion .accordion-item-label {
+    font-size: 0.9375rem; /* 15px */
+    padding: 14px 18px;
+  }
+
+  .accordion .accordion-item-body {
+    font-size: 0.875rem; /* 14px */
+    padding: 0 18px 14px;
+  }
+
+  .accordion .accordion-item[open] .accordion-item-body {
+    padding: 0 18px 14px;
+  }
+
+  .accordion .accordion-item-label::after {
+    font-size: 1.5rem;
+    margin-left: 12px;
+  }
+}
