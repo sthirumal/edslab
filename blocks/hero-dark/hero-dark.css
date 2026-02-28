@@ -1,5 +1,5 @@
 .hero-dark-container {
-  background-color: olive;
+  background-color: pink;
 }
 
 .hero-dark-container .hero-dark-wrapper {
@@ -11,7 +11,7 @@
   position: relative;
   padding: 80px 24px;
   min-height: 500px;
-  background-color: olive;
+  background-color: pink;
 }
 
 .hero-dark > div {
