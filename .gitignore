@@ -19,7 +19,10 @@ package-lock.json
 # Local / agent config and one-off tools (do not commit)
 AGENTS.md
 .agents/
-.claude/
+# Ignore .claude except skills (so skills can be pushed to repo)
+.claude/*
+!.claude/skills/
+!.claude/skills/**
 tools/da-index-response.json
 tools/da-index-updated.html
 tools/da-replace-expertise.js
