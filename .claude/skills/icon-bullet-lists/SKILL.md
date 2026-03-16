@@ -36,22 +36,22 @@ This skill documents and guides implementation of **icon-as-bullet** lists in AE
 
 ## Implementation Overview
 
-1. **JavaScript** (`scripts/icon-bullet-lists.js`): Export `decorateIconBulletLists(main)`. After sections and blocks are decorated, run it; for each `ul`/`ol` in `main`, for each `li` whose text starts with `:icon-<name>:`, create `span.icon` with img, strip the prefix, add classes `icon-bullets` / `has-icon-bullet`.
+1. **JavaScript** (`.claude/skills/icon-bullet-lists/scripts/icon-bullet-lists.js`): Export `decorateIconBulletLists(main)`. After sections and blocks are decorated, run it; for each `ul`/`ol` in `main`, for each `li` whose text starts with `:icon-<name>:`, create `span.icon` with img, strip the prefix, add classes `icon-bullets` / `has-icon-bullet`.
 
-2. **CSS** (`styles/icon-bullet-lists.css`): Rules for `main ul.icon-bullets`, `main .has-icon-bullet`, and `.icon` size so wrapped text aligns. Load in `loadLazy()`.
+2. **CSS** (`.claude/skills/icon-bullet-lists/scripts/icon-bullet-lists.css`): Rules for `main ul.icon-bullets`, `main .has-icon-bullet`, and `.icon` size so wrapped text aligns. Load in `loadLazy()`.
 
 3. **Icons:** Each referenced icon must exist as `icons/<name>.svg` (e.g. `icons/search.svg`, `icons/check.svg`).
 
 ## In This Repository
 
-The feature is implemented in standalone files:
+The canonical implementation lives in this skill’s `scripts/` folder; the site uses copies in `scripts/` and `styles/` at runtime (see below).
 
-- **JS:** `scripts/icon-bullet-lists.js` — exports `decorateIconBulletLists()`; imported and called from `scripts/scripts.js` in `decorateMain()`.
-- **CSS:** `styles/icon-bullet-lists.css` — rules for `main ul.icon-bullets`, `main .has-icon-bullet`; loaded in `loadLazy()`.
+- **JS (canonical):** `.claude/skills/icon-bullet-lists/scripts/icon-bullet-lists.js` — exports `decorateIconBulletLists()`; runtime copy in `scripts/icon-bullet-lists.js` is imported and called from `scripts/scripts.js` in `decorateMain()`.
+- **CSS (canonical):** `.claude/skills/icon-bullet-lists/scripts/icon-bullet-lists.css` — rules for `main ul.icon-bullets`, `main .has-icon-bullet`; runtime copy in `styles/icon-bullet-lists.css` is loaded in `loadLazy()`.
 - **Icons:** `icons/check.svg`, `icons/search.svg`.
 - **Test content:** `drafts/icon-bullets.plain.html` — default content with `ul`/`li` using `:icon-search:` and `:icon-check:`. Preview at `/drafts/icon-bullets` with `aem up --html-folder drafts`.
 
-When working in this repo, extend or adjust the logic and styles in the dedicated JS/CSS files. When adding to another repo, copy `icon-bullet-lists.js` and `icon-bullet-lists.css` and wire them in; see `resources/implementation-reference.md`.
+When working in this repo, edit the JS/CSS in `.claude/skills/icon-bullet-lists/scripts/`, then copy the updated files to `scripts/icon-bullet-lists.js` and `styles/icon-bullet-lists.css` so the site uses the latest version. When adding to another repo, copy `icon-bullet-lists.js` and `icon-bullet-lists.css` from this skill’s `scripts/` folder and wire them in; see `resources/implementation-reference.md`.
 
 ## Related Skills
 

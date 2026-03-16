@@ -6,12 +6,16 @@ Quick reference for the icon-as-bullet list feature. Implemented in this repo; r
 
 | Purpose        | Path |
 |----------------|------|
-| JS logic       | `scripts/icon-bullet-lists.js` |
-| CSS            | `styles/icon-bullet-lists.css` |
+| JS logic (canonical) | `.claude/skills/icon-bullet-lists/scripts/icon-bullet-lists.js` |
+| CSS (canonical)     | `.claude/skills/icon-bullet-lists/scripts/icon-bullet-lists.css` |
+| Runtime JS copy     | `scripts/icon-bullet-lists.js` (used by site) |
+| Runtime CSS copy    | `styles/icon-bullet-lists.css` (used by site) |
 | Wired in       | `scripts/scripts.js` (import + call in `decorateMain`; CSS loaded in `loadLazy`) |
 | Check icon     | `icons/check.svg` |
 | Search icon    | `icons/search.svg` |
 | Draft test     | `drafts/icon-bullets.plain.html` |
+
+**Editing:** Edit the canonical JS/CSS in this skill’s `scripts/` folder, then copy to `scripts/icon-bullet-lists.js` and `styles/icon-bullet-lists.css` so the site uses the latest version.
 
 ## Authoring
 
