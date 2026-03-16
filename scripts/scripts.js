@@ -12,6 +12,7 @@ import {
   loadSections,
   loadCSS,
 } from './aem.js';
+import { decorateIconBulletLists } from './icon-bullet-lists.js';
 
 /**
  * Builds hero block and prepends to main in a new section.
@@ -87,6 +88,7 @@ export function decorateMain(main) {
   buildAutoBlocks(main);
   decorateSections(main);
   decorateBlocks(main);
+  decorateIconBulletLists(main); /* Swapna Thirumala: icon-as-bullet lists */
 }
 
 /**
@@ -130,6 +132,7 @@ async function loadLazy(doc) {
   loadFooter(doc.querySelector('footer'));
 
   loadCSS(`${window.hlx.codeBasePath}/styles/lazy-styles.css`);
+  loadCSS(`${window.hlx.codeBasePath}/styles/icon-bullet-lists.css`);
   loadFonts();
 }
 

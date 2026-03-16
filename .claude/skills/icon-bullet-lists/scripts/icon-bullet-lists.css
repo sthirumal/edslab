@@ -1,0 +1,30 @@
+/*
+ * Icon-as-bullet lists (Swapna Thirumala)
+ * Replace list-style with icon when LI starts with :icon-name:
+ * Wrapped text aligns with the first line (same as regular bullets).
+ */
+
+main ul.icon-bullets,
+main ol.icon-bullets {
+  list-style: none;
+  padding-left: 0;
+}
+
+main .has-icon-bullet {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.5em;
+  padding-left: 0;
+}
+
+main .has-icon-bullet > .icon {
+  flex-shrink: 0;
+  width: 1em;
+  height: 1em;
+  margin-top: 0.25em;
+}
+
+main .has-icon-bullet > .icon img {
+  width: 100%;
+  height: 100%;
+}
